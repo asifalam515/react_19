@@ -1,5 +1,3 @@
-import React from "react";
-
 const App = () => {
   const userinfo = [
     {
@@ -35,14 +33,28 @@ const App = () => {
     <div>
       <h1>Starting react js core concepts {20 + 234} </h1>
       <div>
-        <h1>
-          All numbers are :
-          {numbers.map((number) => (
-            <ul key={number}>
-              <li>{number}</li>
-            </ul>
-          ))}{" "}
-        </h1>
+        {userinfo.map((info) => (
+          <div>
+            <div className="card bg-base-100 w-96 shadow-sm">
+              <figure>
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  alt="Shoes"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Card Title</h2>
+                <p>
+                  A card component has a figure, a body part, and inside body
+                  there are title and actions parts
+                </p>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
