@@ -1,6 +1,7 @@
-import Users from "./components/Users/Users";
+import React from "react";
+import UserCard from "../UserCard/UserCard";
 
-const App = () => {
+const Users = () => {
   const userinfo = [
     {
       id: 1,
@@ -33,9 +34,16 @@ const App = () => {
   ];
   return (
     <div>
-      <Users></Users>
+      <h3 className="text-center text-2xl">
+        All Users number is {userinfo.length}{" "}
+      </h3>
+      <div className="grid grid-cols-3 gap-2">
+        {userinfo.map((info) => (
+          <UserCard key={info.id} info={info}></UserCard>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default App;
+export default Users;
